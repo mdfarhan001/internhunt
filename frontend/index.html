@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>InternHunt - Track every internship</title>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="gate">
+  <div class="gbox">
+    <div class="gl">
+      <h1>Never miss an internship deadline again.</h1>
+      <p>Put every application on one board and move it forward as you hear back.</p>
+      <div class="mini"><span>Drag cards from Wishlist to Offer</span><span>Deadline alerts, 3 days ahead</span><span>Interview prep checklist, built for you</span></div>
+    </div>
+    <form class="gr" id="gform">
+      <h2 id="gtitle">Log in</h2>
+      <div id="namewrap" class="hide"><label for="gname">Your name</label><input id="gname" maxlength="24" placeholder="Priya Sharma" autocomplete="name"></div>
+      <label for="gmail">Email</label><input id="gmail" type="email" required placeholder="priya@college.edu" autocomplete="email">
+      <label for="gpass">Password (min 6 characters)</label><input id="gpass" type="password" required minlength="6" autocomplete="current-password">
+      <p class="err" id="gerr" role="alert"></p>
+      <button class="btn" id="gsub" style="margin-top:6px" type="submit">Log in</button>
+      <button class="btn link" type="button" id="gswitch">New here? Create an account</button>
+      <button class="btn ghost" type="button" id="gdemo">Try with sample data</button>
+    </form>
+  </div>
+</div>
+
+<div id="app" class="hide">
+  <div class="top">
+    <div class="logo">Intern<b>Hunt</b></div>
+    <div><button class="btn link" id="out">Sign out</button> <button class="btn" id="new">+ Add application</button></div>
+  </div>
+  <div class="wrap">
+    <div class="hello"><h2 id="hi"></h2><p id="hisub"></p></div>
+    <div class="stats" id="stats"></div>
+    <div class="bar"><input id="q" type="search" placeholder="Search company or role" aria-label="Search"></div>
+    <div class="board" id="board"></div>
+  </div>
+</div>
+
+<dialog id="dlg">
+  <form id="f">
+    <h2 id="dt">Add application</h2>
+    <div class="two">
+      <div><label for="co">Company</label><input id="co" required maxlength="40"></div>
+      <div><label for="ro">Role</label><input id="ro" required maxlength="40"></div>
+      <div><label for="dl">Deadline</label><input id="dl" type="date"></div>
+      <div><label for="sp">Stipend (₹/month)</label><input id="sp" type="number" min="0"></div>
+    </div>
+    <label for="st">Status</label><select id="st"></select>
+    <label for="lk">Link</label><input id="lk" type="url" placeholder="https://">
+    <label for="nt">Notes</label><textarea id="nt" placeholder="Recruiter name, referral, questions asked"></textarea>
+    <div class="prep hide" id="prep"><h3>Interview prep checklist</h3><div id="chks"></div></div>
+    <p class="err" id="err" role="alert"></p>
+    <div class="acts">
+      <button type="button" class="btn link" id="del">Delete</button>
+      <span><button type="button" class="btn ghost" id="cancel">Cancel</button> <button class="btn" type="submit">Save</button></span>
+    </div>
+  </form>
+</dialog>
+
+<script src="app.js"></script>
+</body>
+</html>
